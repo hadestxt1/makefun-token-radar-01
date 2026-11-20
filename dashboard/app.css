@@ -1,0 +1,94 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #11161d;
+  --panel-2: #161d26;
+  --line: #232d38;
+  --ink: #e6edf3;
+  --muted: #8b98a5;
+  --accent: #2fd48a;
+  --accent-dim: #1d7a52;
+  --warn: #e3b341;
+  --down: #f47067;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent); }
+
+.top { padding: 28px 24px 8px; max-width: 1080px; margin: 0 auto; }
+.brand { font: 700 34px/1 var(--mono); letter-spacing: 1px; }
+.brand span { color: var(--accent); }
+.tagline { color: var(--muted); margin: 8px 0 4px; font-size: 16px; }
+.meta { color: var(--muted); font: 12px var(--mono); margin: 0; }
+
+.stats {
+  max-width: 1080px; margin: 16px auto 0; padding: 0 24px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.stat b { display: block; font: 700 22px var(--mono); color: var(--accent); }
+.stat span { color: var(--muted); font-size: 12px; }
+
+.views { max-width: 1080px; margin: 18px auto 0; padding: 0 24px; display: flex; gap: 8px; }
+.views button {
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 999px; padding: 7px 16px; cursor: pointer; font-size: 14px;
+}
+.views button.active { background: var(--accent); color: #06110b; border-color: var(--accent); font-weight: 700; }
+
+.controls {
+  max-width: 1080px; margin: 14px auto 0; padding: 0 24px;
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.controls input, .controls select {
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 6px; padding: 8px 10px; font-size: 14px;
+}
+.controls input[type="search"] { flex: 2 1 220px; }
+.controls button {
+  background: var(--panel-2); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 6px; padding: 8px 14px; cursor: pointer;
+}
+
+main { max-width: 1080px; margin: 0 auto; padding: 16px 24px 8px; }
+table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+thead th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--panel-2); }
+tbody tr.top3 td:first-child { color: var(--accent); font-weight: 700; }
+.num { text-align: right; font-family: var(--mono); font-size: 13px; }
+.up { color: var(--accent); }
+.down { color: var(--down); }
+.pill {
+  display: inline-block; background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 999px; padding: 1px 8px; font-size: 12px; color: var(--muted);
+}
+.count, .note { color: var(--muted); font-size: 13px; }
+
+.detail { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; margin-bottom: 16px; }
+.detail h2 { margin: 0 0 4px; font-size: 22px; }
+.detail h2 .rank-badge { color: var(--accent); font-family: var(--mono); font-size: 16px; margin-right: 8px; }
+.detail .sub { color: var(--muted); margin: 0 0 14px; }
+.kv { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 14px; }
+.kv div { background: var(--panel-2); border-radius: 6px; padding: 10px 12px; }
+.kv b { display: block; font: 700 17px var(--mono); }
+.kv span { color: var(--muted); font-size: 12px; }
+.detail h3 { margin: 16px 0 8px; font-size: 15px; }
+.detail ol { margin: 0; padding-left: 20px; }
+.detail li { margin-bottom: 8px; }
+.detail li b { color: var(--accent); }
+.back { background: none; border: none; color: var(--accent); cursor: pointer; padding: 0; font-size: 14px; margin-bottom: 12px; }
+
+#method-view h2 { font-size: 20px; }
+#method-view h3 { font-size: 15px; margin-top: 18px; }
+#method-view li { margin-bottom: 6px; }
+
+footer { max-width: 1080px; margin: 0 auto; padding: 8px 24px 28px; color: var(--muted); font-size: 12px; }
+footer p { margin: 4px 0; }

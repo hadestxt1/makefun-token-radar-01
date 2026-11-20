@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — which launch is worth what</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">TOKEN<span>RADAR</span></div>
+  <p class="tagline">Every protocol without a token yet, ranked by what its launch would be worth.</p>
+  <p class="meta" id="meta">Loading the snapshot…</p>
+</header>
+
+<section class="stats" id="stats"></section>
+
+<nav class="views">
+  <button id="view-board" class="active" type="button">Board</button>
+  <button id="view-live" type="button">Live tokens</button>
+  <button id="view-method" type="button">How it is scored</button>
+</nav>
+
+<section class="controls" id="controls">
+  <input id="q" type="search" placeholder="Search a protocol…" autocomplete="off">
+  <select id="category" aria-label="Category"><option value="">All categories</option></select>
+  <select id="chain" aria-label="Chain"><option value="">All chains</option></select>
+  <input id="min-implied" type="number" min="0" placeholder="Min implied $">
+  <button id="reset" type="button">Reset</button>
+</section>
+
+<main>
+  <section id="board-view">
+    <table id="board">
+      <thead><tr>
+        <th>#</th><th>Protocol</th><th>Category</th><th>Chains</th>
+        <th class="num">TVL</th><th class="num">7d</th><th class="num">Implied value</th><th class="num">Age</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="count" id="count"></p>
+  </section>
+
+  <section id="detail-view" hidden></section>
+
+  <section id="live-view" hidden>
+    <p class="note">Protocols that already trade, at the market's own values — never mixed into the ranked board. Their market-cap / TVL ratios are what calibrate the board's peer multiples.</p>
+    <table id="live">
+      <thead><tr>
+        <th>Protocol</th><th>Category</th><th class="num">TVL</th><th class="num">Market cap</th><th class="num">mcap / TVL</th>
+      </tr></thead>
+      <tbody id="live-rows"></tbody>
+    </table>
+  </section>
+
+  <section id="method-view" hidden>
+    <h2>How the board is scored</h2>
+    <p id="method-text"></p>
+    <h3>What the board covers</h3>
+    <ul>
+      <li>The whole watchlist: every protocol at or above the $50M floor with no token and no wrapped, staked or bridged parent.</li>
+      <li>Plus the strongest tokenless protocols below the floor, by TVL — the early radar.</li>
+      <li>Trading protocols are never ranked. They appear only as the live set that sets the peer multiples.</li>
+    </ul>
+    <h3>How to farm it</h3>
+    <p>Every row carries a five-step farm plan: a fresh wallet, one real position sized to the protocol's TVL, a weekly qualifying action, a hold of 30–60 days, and a claim only through the protocol's own site. Never pay to claim.</p>
+  </section>
+</main>
+
+<footer>
+  <p id="source"></p>
+  <p>Token Radar · a make.fun entry · data is a frozen snapshot, not live prices.</p>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
